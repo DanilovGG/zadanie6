@@ -9,8 +9,8 @@ public class FreelancerService {
         for (int month = 0; month < 12; month++) {
             if (money >= threshold) {
                 count++;
-                money -= expenses;
-                money /= 3;
+                money -= expenses; // обязательные месячные траты
+                money /= 3; // траты на отдых
             } else {
                 money += income;
                 money -= expenses; // обязательные месячные траты
@@ -19,14 +19,15 @@ public class FreelancerService {
             }
 
             // Вывод эмуляции планируемого поведения
-            System.out.println("Месяц " + (month + 1) + ". Денег " + money + ". " + (money >= threshold ? "Буду отдыхать." : "Придётся работать."));
+            System.out.print("Месяц " + (month + 1) + ". Денег " + money + ". " + (money >= threshold ? "Буду отдыхать." : "Придётся работать."));
             if (money >= threshold) {
-                System.out.println("Потратил -" + expenses + ", затем ещё -" + ((money - expenses) * 40 / 60));
+                System.out.println("Потратил -" + expenses + ", затем ещё -" + ((money - expenses) * 2 / 3));
             } else {
                 System.out.println("Заработал +" + income + ", потратил -" + expenses);
             }
-        }
 
+        }
+        System.out.println();
         // Возвращаем количество месяцев отдыха
         return count;
     }
