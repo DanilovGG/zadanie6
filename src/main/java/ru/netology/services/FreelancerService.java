@@ -15,13 +15,13 @@ public class FreelancerService {
                 money += income;
                 money -= expenses; // обязательные месячные траты
             } if (month == 0){
-                money = 0; // изначально у него нет денег;
+                money = 0; // в первый месяц денег нет
             }
 
             // Вывод эмуляции планируемого поведения
             System.out.println("Месяц " + (month + 1) + ". Денег " + money + ". " + (money >= threshold ? "Буду отдыхать." : "Придётся работать."));
             if (money >= threshold) {
-                System.out.println("Потратил -" + expenses + ", затем ещё -" + (money - (expenses * 3)));
+                System.out.println("Потратил -" + expenses + ", затем ещё -" + ((money - expenses) * 40 / 60));
             } else {
                 System.out.println("Заработал +" + income + ", потратил -" + expenses);
             }
