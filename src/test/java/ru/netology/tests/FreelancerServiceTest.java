@@ -14,4 +14,14 @@ public class FreelancerServiceTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    public void test2CalculateFreelancerRestMonths() {
+        FreelancerService service = new FreelancerService();
+
+        int expected = 2;
+        int actual = service.calculateFreelancerRestMonths(100000, 60000, 150000);
+
+        Assertions.assertEquals(expected, actual);
+    }
 }

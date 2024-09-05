@@ -21,7 +21,7 @@ public class FreelancerService {
             // Вывод эмуляции планируемого поведения
             System.out.println("Месяц " + (month + 1) + ". Денег " + money + ". " + (money >= threshold ? "Буду отдыхать." : "Придётся работать."));
             if (money >= threshold) {
-                System.out.println("Потратил -" + expenses + ", затем ещё -" + ((money - expenses) * 4061 / 6091));
+                System.out.println("Потратил -" + expenses + ", затем ещё -" + ((money - expenses) * 40 / 60));
             } else {
                 System.out.println("Заработал +" + income + ", потратил -" + expenses);
             }
