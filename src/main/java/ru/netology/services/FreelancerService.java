@@ -7,12 +7,13 @@ public class FreelancerService {
         int money = 0;
 
         for (int month = 0; month < 12; month++) {
-            System.out.print("Месяц " + (month + 1) + ". Денег " + money + ". " + (money >= threshold ? "Буду отдыхать." : "Придётся работать."));
+            System.out.print("Месяц " + (month + 1) + ". Денег " + money + ". " + (money >= threshold ? "Буду отдыхать. " : "Придётся работать. "));
             if (money >= threshold) {
                 count++;
                 money -= expenses; // обязательные месячные траты
+                System.out.println("Потратил -" + expenses + ", затем ещё -" + (money * 2 / 3));
                 money /= 3; // траты на отдых
-                System.out.println("Потратил -" + expenses + ", затем ещё -" + (money * 3 * 2 / 3));
+
             } else {
                 money += income;
                 money -= expenses; // обязательные месячные траты
